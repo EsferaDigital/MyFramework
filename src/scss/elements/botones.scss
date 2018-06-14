@@ -1,7 +1,8 @@
 //La propiedad line-height equivale a la altura del texto, poner 3 es igual que poner 3em.
 // height, por otro lado, nos da la altura de la caja. 3 o 3em sera 3 veces la altura del texto)
 //active es el instante en el que se hace click
-.boton1{
+
+@mixin boton-ovalado{
 	display: block;
 	line-height: 3;
 	background-color: color(cta);
@@ -19,24 +20,7 @@
 	}
 }
 
-.boton2{
-	display: inline-block;
-	line-height: 3;
-	background-color: color(secondary);
-	padding: 0 1.5rem;
-	color: white;
-	text-transform: uppercase;
-	border-radius: 1.5rem;
-	font-size: .8rem;
-	&:hover{
-		background-color: darken(color(secondary),5);
-	}
-	&:active{
-		transform: scale(.95);
-	}
-}
-
-.boton-realista{
+@mixin boton-realista{
 	display: inline-block;
 	line-height: 2.8rem;
 	height: 3rem;
