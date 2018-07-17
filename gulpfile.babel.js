@@ -86,12 +86,10 @@ gulp.task('imagemin', function () {
 		.pipe(notify({ message: 'Imagemin task finalizada' }))
 });
 
-// 6°Crea un servidor interno, observa y actualiza automaticamente los cambios realizados en los archivos; styles.scss, *.pug, *.js y *.html. Además mantiene las tareas programadas actualizandolas automaticamente.
+// 6°Inicia el servidor en la carpeta public, observa y actualiza automaticamente los cambios realizados en los archivos; styles.scss, *.pug, *.js y *.html. Además mantiene las tareas programadas actualizandolas automaticamente.
 gulp.task('server', function () {
 
-	bs.init({
-		server: "./public/"
-	})
+	bs.init({server: "./public/"})
 
 	gulp.watch('./src/pug/*/*.pug', ['pug2html']).on("change", bs.reload)
 	gulp.watch('./src/scss/*/*.scss', ['sass']).on("change", bs.reload)
@@ -101,6 +99,4 @@ gulp.task('server', function () {
 
 // 7° Pone en ejecución toda la programación al comando gulp por consola
 
-gulp.task('default', ['pug2html', 'sass', 'javascript', 'imagemin', 'server'], function () {
-
-});
+gulp.task('default', ['pug2html', 'sass', 'javascript', 'imagemin', 'server'], function () {});
