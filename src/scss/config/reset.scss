@@ -1,11 +1,11 @@
+@charset "UTF-8";
+
 html {
-  box-sizing: border-box;
-  background-color: #fff;
-  color: #000; 
+  box-sizing: border-box; 
 }
 
 body{
-  overflow-x: hidden;
+  margin: 0;
 }
 
 /*Además, todo lo que haga antes y despues, añadeles un box-sizing heredaddo (inherit). Toma el valor del elemento padre. Con ello logramos que los elementos contenedores no hagan crecer la caja cuando tienen padding. También, reseteamos los margines y padding y el tamaño de letra*/
@@ -16,7 +16,12 @@ body{
   padding: 0;
 }
 
-a{text-decoration: none;}
+a{
+	text-decoration: none;
+}
+a:active,
+a:hover {
+  outline-width: 0; }
  
 li{
   margin-left: 0;
@@ -29,17 +34,23 @@ abbr, dfn, em, i {font-style: italic;}
 
 b, strong {font-weight: bold;}
 
-code, pre{font-family: monospace;}
+code,
+pre,
+kbd,
+samp{
+	font-family: monospace;
+	font-size: 1em;
+}
 
 mark{background-color: yellow;}
 
 hr{
-  margin: 1rem auto;
-  width: 100%;
-  border: thin solid #000;
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
 }
 
-article, aside, details, img, figcaption, figure, footer, header, main, menu, nav, section, summary, button{display: block;}
+article, aside, details, img, figcaption, figure, footer, header, main, menu, nav, section, summary{display: block;}
 
 table{border-collapse: collapse;}
 
