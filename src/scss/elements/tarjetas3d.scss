@@ -46,9 +46,13 @@
 	padding: 20px;
 	color: white;
 	transform: perspective(600px);
-	transform: rotateY(180deg);
-	backface-visibility: hidden;
+	transform: rotate3d(0,0,0);
+	backface-visibility: visible;
 	overflow: auto;
+	@include mq($large){
+		transform: rotate3d(0,1,0, 180deg);
+		backface-visibility: hidden;
+	}
 	& hr{
 		height: 2px;
 		background: #fff;
@@ -72,19 +76,19 @@
 .contenedor-tarjeta:nth-child(1) figure .trasera{
 	background: rgba(223,234,241,0.7);
 	background: linear-gradient(to bottom, rgba(223,234,241,0.7) 0%, rgba(15,99,144,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfeaf1', endColorstr='#0f6390', GradientType=0 );
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfeaf1', endColorstr='#0f6390', GradientType=0 );
 }
 
 .contenedor-tarjeta:nth-child(2) figure .trasera{
 	background: rgba(251,232,202,0.7);
 	background: linear-gradient(to bottom, rgba(251,232,202,0.7) 0%, rgba(25,44,72,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe8ca', endColorstr='#192c48', GradientType=0 );
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbe8ca', endColorstr='#192c48', GradientType=0 );
 }
 
 .contenedor-tarjeta:nth-child(3) figure .trasera{
 	background: rgba(95,58,53,0.7);
 	background: linear-gradient(to bottom, rgba(95,58,53,0.7) 0%, rgba(221,32,47,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f3a35', endColorstr='#dd202f', GradientType=0 );
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5f3a35', endColorstr='#dd202f', GradientType=0 );
 }
 
 
