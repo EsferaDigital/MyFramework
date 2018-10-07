@@ -11,14 +11,15 @@
 @import "layout/breakpoints.scss";
 @import "layout/layout.scss";
 
-// Elementos
-
-@import "elements/botones.scss";
-
 // Componentes
 
 @import "componentes/header.scss";
 @import "componentes/main.scss";
 @import "componentes/footer.scss";
+
+// Elementos
+
+@import "elements/botones.scss";
+@import "elements/tarjetas3d.scss";
 
 // Animaciones

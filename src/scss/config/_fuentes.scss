@@ -27,25 +27,10 @@ h6, small{font-size: .75rem;}
 
 // Importar Tipografía
 
-@import url('https://fonts.googleapis.com/css?family=Bitter|Merriweather|Montserrat|Noto+Sans|Noto+Serif|Open+Sans|Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 
-// font-family: 'Poiret One', cursive;
-// font-family: 'Open Sans', sans-serif;
-// font-family: 'Bitter', serif;
-// font-family: 'Merriweather', serif;
-// font-family: 'Noto Serif', serif;
-// font-family: 'Noto Sans', sans-serif;
-// font-family: 'Montserrat', sans-serif;
-
-// principal y secundaria{
-// 	poiret-one : open sans,
-// 	bitter : open sans,
-// 	merriweather : open sans o montserrat,
-// 	noto-serif : noto sans u open sans
-// }
-
-$primary-font: 'Merriweather', serif;
-$secondary-font: 'Montserrat', sans-serif;
+$primary-font: 'Roboto', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
 
 html {
   font-family: $primary-font;
