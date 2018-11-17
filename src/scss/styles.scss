@@ -5,21 +5,28 @@
 @import "config/fuentes.scss";
 @import "config/colores.scss";
 @import "config/var_generales.scss";
+@import "config/breakpoints.scss";
 
-// Layout
+// textos
 
-@import "layout/breakpoints.scss";
-@import "layout/layout.scss";
-
-// Componentes
-
-@import "componentes/header.scss";
-@import "componentes/main.scss";
-@import "componentes/footer.scss";
+@import "textos/titulos.scss";
+@import "textos/parrafos.scss";
 
 // Elementos
 
 @import "elements/botones.scss";
 @import "elements/tarjetas3d.scss";
+
+// secciones
+
+// Bloques
+
+@import "bloques/header.scss";
+@import "bloques/main.scss";
+@import "bloques/footer.scss";
+
+// Paginas
+
+
 
 // Animaciones

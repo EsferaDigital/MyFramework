@@ -31,7 +31,7 @@ gulp.task('pug2html', function buildHTML() {
 			pretty: true
 		}))
 		.pipe(gulpPugBeautify({ omit_empty: true }))
-		//.pipe(htmlmin({ collapseWhitespace: true })) //Activar para minificar
+		.pipe(htmlmin({ collapseWhitespace: true })) //Activar para minificar
 		.pipe(gulp.dest('./public/'));
 });
 
@@ -45,7 +45,7 @@ gulp.task('cache', () => {
 });
 
 //3° Toma los archivos scss, les pone prefijos, les borra los comentarios, crea el sourcemaps, avisa errores, los pasa a css, minifica el css y lo envia a la carpeta public
-gulp.task('sass', function () {
+gulp.task('sass', () => {
 	return gulp.src('./src/scss/styles.scss')
 		.pipe(plumber({ errorHandler: onError }))
 		// Iniciamos el trabajo con sourcemaps
@@ -53,7 +53,7 @@ gulp.task('sass', function () {
 		.pipe(gulpsass())
 		.pipe(autoprefixer('last 2 versions'))
 		.pipe(gulp.dest('./public/css'))
-		//.pipe(cleanCss({ keepSpecialComments: 1 }))
+		.pipe(cleanCss({ keepSpecialComments: 1 }))
 		// Escribir los sourcemaps
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./public/css'))
@@ -62,26 +62,39 @@ gulp.task('sass', function () {
 
 // 4° Vigila los posibles errores en js
 
-gulp.task('lint', function () {
+gulp.task('lint', () => {
 	return gulp.src('./src/js/activos/*.js')
 		.pipe(jshint())
 });
 
-// 5° Toma los archivos js activos, los pasa por babel, avisa posibles errores, concatena los archivos, los minifica y los envía a la carpeta public
+// 5° Toma los archivos js globales, los pasa por babel, avisa posibles errores, concatena los archivos, los minifica y los envía a la carpeta public
 
-gulp.task('javascript', ['lint'], function () {
+gulp.task('globaljs', ['lint'], () => {
 	//Para que los tome todos se usa ** si usara uno solo * tomaría cualquiera
-	gulp.src('./src/js/activos/**.js')
+	gulp.src('./src/js/globales/**.js')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(babel({
 			presets: ['@babel/env']
 		}))
-		.pipe(concat('all.min.js'))
-		.pipe(uglify())		
+		.pipe(concat('global.min.js'))
+		.pipe(uglify())
 		.pipe(gulp.dest('./public/js'));
 });
 
-// 6° Toma todas la imagenes, las optimiza y las envía a la carpeta public
+// 6° Toma los archivos js unicos, los pasa por babel, avisa posibles errores, los minifica y los envía a la carpeta public
+
+gulp.task('uniquejs', ['lint'], () => {
+	//Para que los tome todos se usa ** si usara uno solo * tomaría cualquiera
+	gulp.src('./src/js/unicos/**.js')
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(babel({
+			presets: ['@babel/env']
+		}))
+		.pipe(uglify())
+		.pipe(gulp.dest('./public/js'));
+});
+
+// 7° Toma todas la imagenes, las optimiza y las envía a la carpeta public
 
 gulp.task('imagemin', function () {
 	return gulp.src('./src/img/*.*')
@@ -93,17 +106,22 @@ gulp.task('imagemin', function () {
 		.pipe(gulp.dest('./public/img'));
 });
 
-// 7°Inicia el servidor en la carpeta public, observa y actualiza automaticamente los cambios realizados en los archivos; styles.scss, *.pug, *.js y *.html. Además mantiene las tareas programadas actualizandolas automaticamente.
+// 8°Inicia el servidor en la carpeta public, observa y actualiza automaticamente los cambios realizados en los archivos; styles.scss, *.pug, *.js y *.html. Además mantiene las tareas programadas actualizandolas automaticamente.
 gulp.task('server', function () {
 
-	bs.init({server: "./public"})
+	bs.init({
+    server: {
+      baseDir: "./public"
+    }
+  });
 
 	gulp.watch('./src/pug/*/*.pug', ['pug2html']).on("change", bs.reload)
 	gulp.watch('./src/scss/*/*.scss', ['sass', 'cache']).on("change", bs.reload)
-	gulp.watch('./src/js/activos/*.js', ['javascript', 'cache']).on("change", bs.reload)
+  gulp.watch('./src/js/globales/*.js', ['globaljs', 'cache']).on("change", bs.reload)
+  gulp.watch('./src/js/unicos/*.js', ['uniquejs', 'cache']).on("change", bs.reload)
 	gulp.watch('./src/img/*.*', ['imagemin']).on("change", bs.reload)
 })
 
-// 8° Pone en ejecución toda la programación al comando gulp por consola
+// 9° Pone en ejecución toda la programación al comando gulp por consola
 
-gulp.task('default', ['pug2html', 'sass', 'javascript', 'imagemin', 'server'], function () {});
+gulp.task('default', ['pug2html', 'sass', 'globaljs', 'uniquejs', 'imagemin', 'server'], function () {});

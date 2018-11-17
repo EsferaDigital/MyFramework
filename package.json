@@ -1,7 +1,7 @@
 {
-  "name": "web",
+  "name": "framework",
   "version": "1.0.0",
-  "description": "",
+  "description": "Framework Personal",
   "main": "index.js",
   "scripts": {
     "start": "gulp",
@@ -12,9 +12,9 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
-    "babel-register": "^6.26.0",
-    "browser-sync": "^2.26.0",
-    "gulp": "^3.9.0",
+    "@babel/register": "^7.0.0",
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "6.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-cache-bust": "^1.4.0",

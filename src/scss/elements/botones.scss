@@ -43,3 +43,25 @@
 		text-shadow: 0 1px 1px rgba(#000, .5);
 	}
 }
+
+// Mixin básico, si lleva valores, los predeterminados van al final
+@mixin btn($color, $fs, $bgc, $display:inline-block){
+  display: $display;
+  font-size: $fs;
+  padding: 1rem;
+  color: $color;
+  background-color: $bgc;
+  &:hover{
+		background-color: darken($color,5);
+	}
+	&:active{
+		transform: scale(.95);
+	}
+}
+
+.button-ej{
+  @include btn(color(cta),1rem, color(primary));
+  &-small{
+    @include btn(color(cta), 1rem, color(primary));
+  }
+}

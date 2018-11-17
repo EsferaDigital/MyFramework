@@ -1,0 +1,48 @@
+//Breakpoints
+
+$small: 360px;
+$small-medium: 411px;
+$small-large: 480px;
+$medium: 600px;
+$medium-large: 768px;
+$large-small: 1024px;
+$large-medium: 1240px;
+$large: 1400px;
+
+//Mixin para media query
+
+@mixin mq($size) {
+    @if $size == sm {
+        @media screen and (min-width: $small)and (orientation: portrait){@content;}
+    }
+    @if $size == smH{
+        @media screen and (min-width: $small)and (max-width: $medium-large) and (orientation: landscape){@content;}
+    }
+    @if $size == smm {
+        @media screen and (min-width: $small-medium)and (orientation: portrait){@content;}
+    }
+    @if $size == smmH {
+        @media screen and (min-width: $small-medium)and (max-width: $small-medium) and (orientation: landscape){@content;}
+    }
+    @if $size == sml {
+        @media screen and (min-width: $small-large)and (orientation: portrait){@content;}
+    }
+    @if $size == md {
+        @media screen and (min-width: $medium){@content;}
+    }
+    @if $size == mdl {
+        @media screen and (min-width: $medium-large){@content;}
+    }
+    @if $size == lgs {
+        @media screen and (min-width: $large-small){@content;}
+    }
+    @if $size == lgsH {
+        @media screen and (min-width: $large-small)and (orientation: landscape){@content;}
+    }
+    @if $size == lgm {
+        @media screen and (min-width: $large-medium){@content;}
+    }
+    @if $size == lg {
+        @media screen and (min-width: $large){@content;}
+    }
+}
