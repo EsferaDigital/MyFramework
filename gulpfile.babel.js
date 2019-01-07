@@ -1,22 +1,24 @@
 'use strict'
 
-const gulp = require('gulp');
-const babel = require('gulp-babel');
-const bust = require('gulp-cache-bust');
+import gulp from 'gulp';
+import babel from 'gulp-babel';
+import bust from 'gulp-cache-bust';
+import plumber from 'gulp-plumber';
+import pug from 'gulp-pug';
+import gulpPugBeautify from 'gulp-pug-beautify';
+import htmlmin from 'gulp-htmlmin';
+import browserSync from 'browser-sync';
+import gulpsass from 'gulp-sass';
+import autoprefixer from 'gulp-autoprefixer';
+import cleanCss from 'gulp-clean-css';
+import sourcemaps from 'gulp-sourcemaps';
+import concat from 'gulp-concat';
+import jshint from 'gulp-jshint';
+import uglify from 'gulp-uglify';
+import imagemin from 'gulp-imagemin';
 
-const plumber = require('gulp-plumber'),
-	pug = require('gulp-pug'),
-	gulpPugBeautify = require('gulp-pug-beautify'),
-	htmlmin = require('gulp-htmlmin'),
-	bs = require('browser-sync').create(),
-	gulpsass = require('gulp-sass'),
-	autoprefixer = require('gulp-autoprefixer'),
-	cleanCss = require('gulp-clean-css'),
-	sourcemaps = require('gulp-sourcemaps'),
-	concat = require('gulp-concat'),
-	jshint = require('gulp-jshint'),
-	uglify = require('gulp-uglify'),
-	imagemin = require('gulp-imagemin')
+
+const server = browserSync.create();
 
 let onError = function (err) {
 	console.log('Se ha producido un error: ', err.message);
@@ -26,7 +28,7 @@ let onError = function (err) {
 // 1°Toma cualquier archivo pug, lo pasa a html, lo minifica y crea un archivo html en la raíz si este no existe.
 
 gulp.task('pug2html', function buildHTML() {
-	gulp.src('./src/pug/html/*.pug')
+	gulp.src('./src/pug/paginas/*.pug')
 		.pipe(pug({
 			pretty: true
 		}))
@@ -57,13 +59,13 @@ gulp.task('sass', () => {
 		// Escribir los sourcemaps
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./public/css'))
-		.pipe(bs.stream())
+		.pipe(server.stream())
 });
 
 // 4° Vigila los posibles errores en js
 
 gulp.task('lint', () => {
-	return gulp.src('./src/js/activos/*.js')
+	return gulp.src('./src/js/**/*.js')
 		.pipe(jshint())
 });
 
@@ -75,8 +77,8 @@ gulp.task('globaljs', ['lint'], () => {
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(babel({
 			presets: ['@babel/env']
-		}))
-		.pipe(concat('global.min.js'))
+    }))
+    .pipe(concat('global.min.js'))
 		.pipe(uglify())
 		.pipe(gulp.dest('./public/js'));
 });
@@ -108,20 +110,18 @@ gulp.task('imagemin', function () {
 
 // 8°Inicia el servidor en la carpeta public, observa y actualiza automaticamente los cambios realizados en los archivos; styles.scss, *.pug, *.js y *.html. Además mantiene las tareas programadas actualizandolas automaticamente.
 gulp.task('server', function () {
-
-	bs.init({
+  server.init({
     server: {
       baseDir: "./public"
     }
   });
 
-	gulp.watch('./src/pug/*/*.pug', ['pug2html']).on("change", bs.reload)
-	gulp.watch('./src/scss/*/*.scss', ['sass', 'cache']).on("change", bs.reload)
-  gulp.watch('./src/js/globales/*.js', ['globaljs', 'cache']).on("change", bs.reload)
-  gulp.watch('./src/js/unicos/*.js', ['uniquejs', 'cache']).on("change", bs.reload)
-	gulp.watch('./src/img/*.*', ['imagemin']).on("change", bs.reload)
-})
+	gulp.watch('./src/pug/*/*.pug', ['pug2html']).on("change", server.reload)
+	gulp.watch('./src/scss/*/*.scss', ['sass', 'cache']).on("change", server.reload)
+  gulp.watch('./src/js/*/*.js', ['globaljs', 'uniquejs', 'cache']).on("change", server.reload)
+	gulp.watch('./src/img/*.*', ['imagemin']).on("change", server.reload)
+});
 
 // 9° Pone en ejecución toda la programación al comando gulp por consola
 
-gulp.task('default', ['pug2html', 'sass', 'globaljs', 'uniquejs', 'imagemin', 'server'], function () {});
+gulp.task('default', ['pug2html', 'sass', 'globaljs', 'uniquejs', 'server'], function () {});
