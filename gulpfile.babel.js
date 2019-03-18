@@ -19,6 +19,12 @@ import imagemin from 'gulp-imagemin';
 
 
 const server = browserSync.create();
+const imageminOptions = {
+  progressive: true,
+  optimizationLevel: 3,
+  interlaced: true,
+  svgPlugins: [{removeViewBox: false}]
+}
 
 let onError = function (err) {
 	console.log('Se ha producido un error: ', err.message);
@@ -101,10 +107,7 @@ gulp.task('uniquejs', ['lint'], () => {
 gulp.task('imagemin', function () {
 	return gulp.src('./src/img/*.*')
 		.pipe(plumber({ errorHandler: onError }))
-		.pipe(imagemin({
-			progressive: true,
-			interlaced: true
-		}))
+		.pipe(imagemin(imageminOptions))
 		.pipe(gulp.dest('./public/img'));
 });
 

@@ -1,0 +1,1 @@
+"use strict";!function(t,o,n){n(".ver-Mas").on("click",function(t){t.preventDefault();var o=n(this).attr("href"),e=n(o).offset().top;n("html, body").animate({scrollTop:e-10},1e3)})}(document,console.log,jQuery.noConflict());
