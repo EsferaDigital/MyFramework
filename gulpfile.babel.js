@@ -10,14 +10,18 @@ import htmlmin from 'gulp-htmlmin';
 import browserSync from 'browser-sync';
 import gulpsass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
+import browserify from 'browserify';
+import jsmin from 'gulp-jsmin';
 import cleanCss from 'gulp-clean-css';
 import sourcemaps from 'gulp-sourcemaps';
 import concat from 'gulp-concat';
 import jshint from 'gulp-jshint';
 import uglify from 'gulp-uglify';
 import imagemin from 'gulp-imagemin';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 
-
+const reload = browserSync.reload
 const server = browserSync.create();
 const imageminOptions = {
   progressive: true,
@@ -77,16 +81,18 @@ gulp.task('lint', () => {
 
 // 5° Toma los archivos js globales, los pasa por babel, avisa posibles errores, concatena los archivos, los minifica y los envía a la carpeta public
 
-gulp.task('globaljs', ['lint'], () => {
-	//Para que los tome todos se usa ** si usara uno solo * tomaría cualquiera
-	gulp.src('./src/js/globales/**.js')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(babel({
-			presets: ['@babel/env']
-    }))
-    .pipe(concat('global.min.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest('./public/js'));
+gulp.task('globaljs', () => {
+  browserify('./src/js/globales/index.js')
+    .transform('babelify', {presets: ["@babel/preset-env"]})
+    .bundle()
+    .on('error', err => console.log(err.message))
+    .pipe(source('./public/js/global.min.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({loadMaps: true}))
+    .pipe(sourcemaps.write('./'))
+    .pipe(jsmin())
+    .pipe(gulp.dest('./'))
+    .pipe(reload({stream: true}))
 });
 
 // 6° Toma los archivos js unicos, los pasa por babel, avisa posibles errores, los minifica y los envía a la carpeta public
@@ -127,4 +133,4 @@ gulp.task('server', function () {
 
 // 9° Pone en ejecución toda la programación al comando gulp por consola
 
-gulp.task('default', ['pug2html', 'sass', 'globaljs', 'uniquejs', 'server'], function () {});
+gulp.task('default', ['pug2html', 'sass','uniquejs', 'server'], function () {});

@@ -1,1 +1,0 @@
-"use strict";var _ejemplo=require("../dev/ejemplo");(0,_ejemplo.saludo)();
