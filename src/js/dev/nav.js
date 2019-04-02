@@ -10,4 +10,8 @@ const toggleNav = () =>{
   })
 }
 
-export default toggleNav
+function animaciones(){
+  console.log('funciona')
+}
+
+export {toggleNav,animaciones};

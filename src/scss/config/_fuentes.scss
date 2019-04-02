@@ -25,18 +25,16 @@ h5, a, abbr, b, code, dfn, em, i, li, mark, p, pre, strong{
 
 h6, small{font-size: .75rem;}
 
-// Importar Tipografía
+// Familias tipográficas
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
-
-$primary-font: 'Roboto', sans-serif;
-$secondary-font: 'Open Sans', sans-serif;
+$fuente-principal: 'Open Sans', sans-serif;
+$fuente-secundaria: 'Anton', sans-serif;
 
 html {
-  font-family: $primary-font;
+  font-family: $fuente-principal;
   font-size: $font-root;
 }
 
 body{
-  font-family: $primary-font;
+  font-family: $fuente-principal;
 }

@@ -14,14 +14,14 @@
 
  //Para obtener variables z-index
 
- @function z-index($capa){
+ @function capa($capa){
    @return map-get($capas, $capa);
  }
 
   // Con esta función, para poner z-index bastaria poner, por ejemplo:
   //
   // div{
-  //   z-index: z-index(capa1);
+  //   z-index: capa(capa1);
   // }
 
 

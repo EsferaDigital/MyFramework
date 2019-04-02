@@ -4,10 +4,10 @@
 @import "config/funciones.scss";
 @import "config/fuentes.scss";
 @import "config/colores.scss";
-@import "config/var_generales.scss";
 @import "config/breakpoints.scss";
+@import "config/var_generales.scss";
 
-// textos
+// Textos
 
 @import "textos/titulos.scss";
 @import "textos/parrafos.scss";
@@ -15,9 +15,8 @@
 // Elementos
 
 @import "elements/botones.scss";
-@import "elements/tarjetas3d.scss";
 
-// secciones
+// Paginas
 
 // Bloques
 
@@ -25,8 +24,8 @@
 @import "bloques/main.scss";
 @import "bloques/footer.scss";
 
-// Paginas
+// Secciones
 
-
-
-// Animaciones
+@import "secciones/main-inicio.scss";
+@import "secciones/main-nosotros.scss";
+@import "secciones/main-servicios.scss";

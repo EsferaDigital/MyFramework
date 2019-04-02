@@ -1,3 +1,4 @@
-import toggleNav from '../dev/toggle-nav';
+import {toggleNav, animaciones} from '../dev/nav';
 
-toggleNav();
+toggleNav()
+animaciones()
