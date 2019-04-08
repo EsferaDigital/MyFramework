@@ -1,8 +1,10 @@
 import {toggleNav, animaciones} from '../dev/nav';
-import Slider from '../dev/slider';
+// import SliderFade from '../dev/slider';
+import carruselNormal from '../dev/slider';
 import cuentaRegresiva from '../dev/cuenta-regresiva';
 
 toggleNav()
 animaciones()
-Slider()
+carruselNormal()
+// SliderFade()
 cuentaRegresiva()
