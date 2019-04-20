@@ -1,0 +1,43 @@
+.Tabs-container{
+  border: 4px solid green;
+  position: relative;
+  width: 90%; // sólo para verlo mejor
+  margin: auto; //Sólo para verlo mejor
+}
+
+.Tabs{
+  // border: 2px solid blue;
+  display: flex;
+  &-item{
+    border: 1px solid #ccc;
+    line-height: 2.5;
+    padding: 0 1rem;
+    margin-right: 1px;
+    background: #eee;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    border-bottom: none;
+    top: 1px;
+    z-index: 0;
+    cursor: pointer;
+    &.tab-activo{
+      background: #fff;
+      z-index: 20;
+    }
+  }
+}
+
+.Tabs-panels{
+  border: 1px solid #ccc;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
+  &-item{
+    position: absolute;
+    left: -5000%;
+    &.panel-activo{
+      position: relative;
+      left: 0;
+    }
+  }
+}
