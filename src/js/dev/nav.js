@@ -10,8 +10,40 @@ const toggleNav = () =>{
   })
 }
 
-function animaciones(){
-  console.log('funciona')
+const scrollNav = () =>{
+  const itemLinks = document.querySelectorAll(".Menu a")
+
+  itemLinks.forEach(elem => elem.addEventListener('click', navBarClick))
+
+  function navBarClick(e){
+    smoothScroll(e);
+  }
+
+  function smoothScroll(e){
+    e.preventDefault()
+    const targetId = e.currentTarget.getAttribute("href")
+    const targetPosition = document.querySelector(targetId).offsetTop
+    const startPosition = window.pageYOffset
+    const distance = targetPosition - startPosition
+    const duration = 1000
+    let start = null
+
+    window.requestAnimationFrame(step)
+    function step(timestamp){
+      if(!start) start = timestamp
+      const progress = timestamp - start
+      window.scrollTo(0, easeInOut(progress, startPosition, distance, duration))
+      if(progress < duration) window.requestAnimationFrame(step)
+    }
+  }
+
+  function easeInOut(t,b,c,d){
+    t /= d/2
+    if(t <1 ) return c/2*t*t + b
+    t--
+    return -c/2 * (t*(t-2) - 1) + b
+  }
 }
 
-export {toggleNav,animaciones};
+
+export {toggleNav, scrollNav};
