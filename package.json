@@ -18,10 +18,8 @@
     "browserify": "^16.2.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "6.0.0",
-    "gulp-babel": "^8.0.0",
     "gulp-cache-bust": "^1.4.0",
     "gulp-clean-css": "3.10.0",
-    "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "5.0.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-jshint": "^2.1.0",
@@ -31,7 +29,6 @@
     "gulp-pug-beautify": "0.0.1",
     "gulp-sass": "4.0.1",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "3.0.1",
     "jshint": "2.9.6",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"

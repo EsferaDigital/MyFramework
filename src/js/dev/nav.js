@@ -11,7 +11,7 @@ const toggleNav = () =>{
 }
 
 const scrollNav = () =>{
-  const itemLinks = document.querySelectorAll(".Menu a")
+  const itemLinks = document.querySelectorAll(".Menu-link")
 
   itemLinks.forEach(elem => elem.addEventListener('click', navBarClick))
 
@@ -24,7 +24,7 @@ const scrollNav = () =>{
     const targetId = e.currentTarget.getAttribute("href")
     const targetPosition = document.querySelector(targetId).offsetTop
     const startPosition = window.pageYOffset
-    const distance = targetPosition - startPosition
+    const distance = targetPosition - startPosition - 80
     const duration = 1000
     let start = null
 

@@ -1,0 +1,13 @@
+extends ../template/modelo
+append config
+  -titulo = "Modelo | Galeria";
+  - descripcion = "Somos blabla bla";
+
+block header
+ include ../bloques/header
+block main
+ include ../secciones/main-galeria
+block footer
+ include ../bloques/footer
+block script
+  script(src="js/galeria.js")
