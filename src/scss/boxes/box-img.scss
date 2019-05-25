@@ -1,0 +1,7 @@
+.Box-img{
+  border: 1px solid blue;
+  & img{
+    width: 100%;
+    height: auto;
+  }
+}

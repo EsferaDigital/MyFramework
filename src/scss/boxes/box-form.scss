@@ -1,0 +1,9 @@
+// Mixins
+
+@mixin box-form{
+  border: 2px solid red;
+}
+
+.Box-form-search{
+  @include box-form;
+}

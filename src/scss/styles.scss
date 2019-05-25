@@ -1,35 +1,46 @@
 // Configuración
 
-@import "config/reset.scss";
-@import "config/funciones.scss";
-@import "config/fuentes.scss";
-@import "config/colores.scss";
-@import "config/breakpoints.scss";
-@import "config/var_generales.scss";
+@import "config/reset";
+@import "config/capas";
+@import "config/colores";
+@import "config/fuentes";
+@import "config/sombras";
+@import "config/imagenes";
+@import "config/breakpoints";
+@import "config/var-root";
 
-// Textos
+// secciones (etiquetas html principales)
 
-@import "textos/titulos.scss";
-@import "textos/parrafos.scss";
+@import "secciones/header";
+@import "secciones/main";
+@import "secciones/aside";
+@import "secciones/footer";
+@import "secciones/banner";
 
-// Elementos
+// contenedores (contenedores principales)
 
-@import "elements/botones.scss";
-// @import "elements/slider-fade.scss";
-@import "elements/slider.scss";
-@import "elements/tabs.scss";
-@import "elements/masonry.scss";
+@import "contenedores/header-container";
+@import "contenedores/main-container";
+@import "contenedores/aside-container";
+@import "contenedores/footer-container";
+@import "contenedores/container-central";
+@import "contenedores/container-grid"; //para meter dentro maś de una card y/o elemento
 
-// Paginas
 
-// Bloques
+// Boxes (contenido único centrado absoluto)
 
-@import "bloques/header.scss";
-@import "bloques/main.scss";
-@import "bloques/footer.scss";
+@import "boxes/box-img";
+@import "boxes/box-text";
+@import "boxes/box-audio";
+@import "boxes/box-video";
+@import "boxes/box-form";
 
-// Secciones
 
-@import "secciones/main-inicio.scss";
-@import "secciones/main-nosotros.scss";
-@import "secciones/main-servicios.scss";
+// Cards (tarjetas con contenido unico. Van siempre dentro de un container grid)
+
+@import "cards/card-img";
+@import "cards/card-text";
+
+
+
+//Los elementos y las animaciones las importamos en los archivos en los que los necesitemos

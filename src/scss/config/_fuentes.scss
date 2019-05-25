@@ -1,5 +1,17 @@
 // Reset tamaño de tipografias
 
+  // Convertir px a em
+
+@function em($el,$parent:16px) {
+  @return ($el / $parent) * 1em;
+}
+
+// Convertir px a rem
+
+@function rem($el) {
+  @return ($el / 16px) * 1rem;
+}
+
  //Tamaños de fuentes
 
 $font-root: em(16px);

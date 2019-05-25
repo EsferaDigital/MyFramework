@@ -1,0 +1,14 @@
+// Variables
+
+$altura-header: 5rem;
+
+.Header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: capa(capa10);
+  width: 100%;
+  height: $altura-header;
+  line-height: $altura-header;
+  background-color: color(primary);
+}

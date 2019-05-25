@@ -1,10 +1,12 @@
 extends ../template/modelo
 
 block header
- include ../bloques/header
+  include ../secciones/header
 block main
- include ../secciones/main-inicio
+  include ../mains/main-inicio
+block aside
+  include ../secciones/aside
 block footer
- include ../bloques/footer
+  include ../secciones/footer
 block script
   script(src="js/inicio.js")

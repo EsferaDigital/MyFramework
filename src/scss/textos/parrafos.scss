@@ -1,5 +1,6 @@
-@mixin parrafo{
-  font-family: $fuente-principal;
-  font-size: 1rem;
-  letter-spacing: 1px;
+@mixin parrafos($familia, $tamano, $color){
+  font-family: $familia;
+  font-size: $tamano;
+  color: $color;
+  padding: .5rem;
 }

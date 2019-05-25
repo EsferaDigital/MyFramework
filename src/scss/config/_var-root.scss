@@ -1,0 +1,15 @@
+// Variables para maquetación
+
+$ancho-maximo: 1400px; //de todo el sitio
+$main-maximo: 90%; // de lo visible para desktop
+
+:root{
+  --gap: .5rem; //gap de los Container-grid
+  --font-size-parrafos: .9rem;
+  @include mq(md){
+    --font-size-parrafos: 1rem;
+  }
+  @include mq(lgs){
+    --gap: 1rem;
+  }
+}

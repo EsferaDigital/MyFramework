@@ -1,0 +1,12 @@
+// Funcion para obtener imagenes
+
+@function img($img) {
+  @return url('/img/' + $img);
+}
+
+//Ejemplo
+
+// img{
+//   background-image: img('ejemplo.jpg');
+// }
+

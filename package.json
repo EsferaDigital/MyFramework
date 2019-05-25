@@ -1,7 +1,7 @@
 {
-  "name": "framework",
-  "version": "1.0.0",
-  "description": "Framework Personal",
+  "name": "ada",
+  "version": "2.0.0",
+  "description": "Framework Personal para el desarrollo veloz de sitios web",
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",
@@ -11,6 +11,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.1.0",
     "@babel/register": "^7.0.0",
     "babelify": "^10.0.0",
@@ -32,5 +33,8 @@
     "jshint": "2.9.6",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.4"
   }
 }

@@ -1,0 +1,7 @@
+.Box-audio{
+  border: 2px solid purple;
+  & audio{
+    border: 2px solid red;
+    height: 20px;
+  }
+}

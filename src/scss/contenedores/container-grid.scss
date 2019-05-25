@@ -1,0 +1,26 @@
+// Mixins
+
+@mixin container-grid($columns, $rows, $gap){
+  display: grid;
+  grid-gap: $gap;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+}
+
+.Container-grid-4{
+  @include container-grid(1fr, auto, var(--gap));
+  @include mq(md){
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid pink;
+  }
+  @include mq(lgs){
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.Container-grid-3{
+  @include container-grid(1fr, auto, var(--gap));
+  @include mq(lgs){
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

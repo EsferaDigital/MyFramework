@@ -4,8 +4,12 @@ append config
   - descripcion = "Somos blabla bla";
 
 block header
- include ../bloques/header
+  include ../secciones/header
 block main
- include ../secciones/main-nosotros
+  include ../mains/main-nosotros
+block aside
+  include ../secciones/aside
 block footer
- include ../bloques/footer
+  include ../secciones/footer
+block script
+  script(src="js/nosotros.js")

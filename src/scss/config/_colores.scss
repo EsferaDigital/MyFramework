@@ -1,3 +1,9 @@
+ //Para obtener color
+
+ @function color($color) {
+  @return map-get($colors,$color);
+}
+
 // Paleta de colores
 
 $colors:(
@@ -6,8 +12,15 @@ $colors:(
   success: #60d394,
   alert: #fb3640,
   info: #FF570C,
+  parrafos: #2c2c2c,
   bg: #e5e5e5,
   bg-item: #ffffff,
   cta: #ff9f1c,
   logoA: #FF570C,
 );
+
+ // Con esta función, para capturar el color bastaria poner, por ejemplo:
+ //
+ // div{
+ //   background: color(gris-claro);
+ // }

@@ -1,0 +1,11 @@
+@import "../textos/parrafos";
+
+.Box-text{
+  display: grid;
+  align-items: center; //vertical
+  // justify-items: center; horizontañ
+  border: 1px solid blue;
+  & p{
+    @include parrafos($fuente-secundaria, var(--font-size-parrafos), color(parrafos));
+  }
+}

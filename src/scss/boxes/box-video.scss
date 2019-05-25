@@ -1,0 +1,7 @@
+.Box-video{
+  border: 2px solid blue;
+  & video{
+    width: 100%;
+    height: auto;
+  }
+}

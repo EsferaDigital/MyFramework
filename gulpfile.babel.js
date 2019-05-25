@@ -79,11 +79,11 @@ gulp.task('lint', () => {
 // 5° Toma el archivo index.js, lo pasa por babel, avisa posibles errores, crea un archivo js, lo minifica, lo envía a la carpeta public y crea un archivo maps para ese archivo. Es importante crear un archivo para cada página, para ello, basta editar el index.js y cambiar el nombre del archivo resultante en esta tarea
 
 gulp.task('js', () => {
-  browserify('./src/js/globales/index.js')
+  browserify('./src/js/index.js')
     .transform('babelify', {presets: ["@babel/preset-env"]})
     .bundle()
     .on('error', err => console.log(err.message))
-    .pipe(source('./public/js/galeria.js'))
+    .pipe(source('./public/js/inicio.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(sourcemaps.write('./'))

@@ -1,0 +1,32 @@
+ //Para obtener variables z-index
+
+ @function capa($capa){
+  @return map-get($capas, $capa);
+}
+
+ // variables para z-index
+
+ $capas:(
+   capa1: 100,
+   capa2: 200,
+   capa3: 300,
+   capa4: 400,
+   capa5: 500,
+   capa6: 600,
+   capa7: 700,
+   capa8: 800,
+   capa9: 900,
+   capa10: 1000
+ );
+
+ // Con esta función, para poner z-index bastaria poner, por ejemplo:
+
+// div{
+//   z-index: capa(capa1);
+// }
+
+
+
+
+
+
