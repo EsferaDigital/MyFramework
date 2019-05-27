@@ -1,0 +1,24 @@
+// Variables
+
+
+@mixin titulo($font-color){
+  color: $font-color;
+  font-size:var(--font-size-titulo);
+  padding: var(--padding-titulo);
+  letter-spacing: $espacio-entre-letras;
+}
+
+@mixin sub-titulo($font-color){
+  color: $font-color;
+  font-size: var(--font-size-subtitulo);
+  letter-spacing: $espacio-entre-letras;
+}
+
+// Los titulos son para los h1
+.Titulo{
+  @include titulo(white);
+}
+
+.Subtitulo{
+  @include sub-titulo(white);
+}

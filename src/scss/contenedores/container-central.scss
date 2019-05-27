@@ -3,22 +3,15 @@
 //Mixins
 
 @mixin con-aside{
-  --margen: 1rem;
-  width: 95%;
-  margin: auto;
   display: grid;
-  grid-gap: var(--margen);
-  grid-template-columns: 1fr;
-  @include mq(lgs){
-    grid-template-columns: 1fr minmax(min-content, 20%);
-    max-width: $main-maximo;
-  }
+  margin: auto;
+  max-width: var(--main-maximo);
+  grid-gap: var(--gap-aside);
+  grid-template-columns: var(--columns-aside);
+
 }
 
 
 .Container-central{
   @include con-aside;
-  margin-top: calc(5rem + var(--margen));
-  margin-bottom: var(--margen);
-  border: 2px solid red;
 }

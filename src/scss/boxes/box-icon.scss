@@ -1,0 +1,15 @@
+// Variables
+
+// Mixin
+@mixin box-icon($columns, $ancho){
+  display: grid;
+  grid-template-columns: $columns;
+  justify-items: center; //horizontal
+  align-items: center; //vertical
+  width: 50%;
+  max-width: $ancho;
+}
+
+.Box-icon{
+  @include box-icon(var(--columns-box-icon), 200px )
+}

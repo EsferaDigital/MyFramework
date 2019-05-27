@@ -1,15 +1,39 @@
 // Variables para maquetación
 
 $ancho-maximo: 1400px; //de todo el sitio
-$main-maximo: 90%; // de lo visible para desktop
+$espacio-entre-letras: 1px;
+$altura-header: 5rem; //revisar
 
 :root{
-  --gap: .5rem; //gap de los Container-grid
+  // ancho maximo de lo visible para desktop
+  --main-maximo: 95%;
+  // Columnas container
+  --columns-aside: 1fr;
+  --columns-container-central: 1fr;
+  --columns-container-grid2: 1fr;
+  --columns-container-grid3: 1fr;
+  --columns-container-grid4: 1fr;
+  --columns-header-container: 1fr;
+  --columns-main-container: 1fr;
+  --columns-footer-container: 1fr;
+  // gap de los container
+  --gap-aside: .5rem;
+  --gap-container-grid: .5rem;
+  // Columnas box
+  --columns-box-icon: 1fr;
+  // tamaño de fuentes
+  --font-size-titulo: 1.7rem;
+  --font-size-subtitulo: 1.4rem;
   --font-size-parrafos: .9rem;
+  --font-size-small-text: .9rem;
+  --font-size-link-text: 1rem;
+  --size-icon: 1.7rem;
+  // Ancho del logo
+  --ancho-logo: 40%;
   @include mq(md){
     --font-size-parrafos: 1rem;
   }
   @include mq(lgs){
-    --gap: 1rem;
+    --gap-container-grid: 1rem;
   }
 }

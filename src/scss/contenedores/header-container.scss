@@ -1,11 +1,9 @@
+// Refactorizar
+
 .Header-container{
   position: relative;
   margin: 0 auto;
   width: 95%;
-  @include mq(lgs){
-    max-width: $main-maximo;
-    display: flex;
-  }
 }
 
 .Logo{

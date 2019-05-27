@@ -8,19 +8,13 @@
 }
 
 .Container-grid-4{
-  @include container-grid(1fr, auto, var(--gap));
-  @include mq(md){
-    grid-template-columns: 1fr 1fr;
-    border: 2px solid pink;
-  }
-  @include mq(lgs){
-    grid-template-columns: repeat(4, 1fr);
-  }
+  @include container-grid(var(--columns-container-grid4), auto, var(--gap-container-grid));
 }
 
 .Container-grid-3{
-  @include container-grid(1fr, auto, var(--gap));
-  @include mq(lgs){
-    grid-template-columns: repeat(3, 1fr);
-  }
+  @include container-grid(var(--columns-container-grid3), auto, var(--gap-container-grid));
 }
+.Container-grid-2{
+  @include container-grid(var(--columns-container-grid2), auto, var(--gap-container-grid));
+}
+

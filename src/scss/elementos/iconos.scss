@@ -1,0 +1,15 @@
+
+@mixin icon($size, $color, $bg-color){
+  font-size: $size;
+  color: $color;
+  background-color: $bg-color;
+  &:hover{
+    color: darken($color, 9);
+  }
+}
+
+.Icon-link{
+  @include icon(var(--size-icon), color(secondary), transparent);
+  padding: var(--padding-icon);
+  transition: color .3s ease;
+}
