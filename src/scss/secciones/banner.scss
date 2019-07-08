@@ -1,12 +1,45 @@
 @mixin banner-img-text{
   width: 100%;
+  max-width: $ancho-maximo;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  margin: auto;
+}
+
+@mixin banner-slider{
+  position: relative;
+  width: 100%;
+  max-width: $ancho-maximo;
+  height: calc(100vw / 1.333);
+  margin: auto;
+  border: 2px solid red;
 }
 
 .Banner{
   @include banner-img-text();
-  // border: 2px solid blue;
+  position: relative;
+  top: -$altura-header;
+  margin-bottom: -$altura-header;
   text-align: center;
+  width: 100%;
+  height: auto;
+  background-image: img("fondo-banner.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &:before{
+    position: absolute;
+    content: "";
+    z-index: capa(capa1);
+    width: 100%;
+    height: 100%;
+    background-color: color(fondo);
+    opacity: .4;
+  }
+}
+
+.Banner-slider{
+  @include banner-slider;
 }

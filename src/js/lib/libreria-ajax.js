@@ -1,3 +1,5 @@
+// Ver curso para saber como usarla
+
 const ajax = request =>{
   return new Promise((resolve, reject) =>{
     const xhr = new XMLHttpRequest()
@@ -9,4 +11,6 @@ const ajax = request =>{
   })
 }
 
-export default ajax
+export {
+  ajax
+}

@@ -133,6 +133,7 @@ task("js", js)
 task("img", img)
 task("servidor", servidor)
 task("watch_files", series(watch_files, servidor))
+
 // 8° Pone en ejecución toda la programación al comando gulp por consola
 
 task('default', parallel(html, cache, sass,lint, js, servidor, watch_files))

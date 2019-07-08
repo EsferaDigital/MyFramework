@@ -26,3 +26,53 @@
     transform: scale(.95);
   }
 }
+
+.btn-ToTop{
+  display: none;
+  position: fixed;
+  padding: 1rem 1.2rem;
+  bottom: 10rem;
+  right: 1rem;
+  z-index: capa(capa10);
+  background-color: color(primary);
+  color: white;
+  cursor: pointer;
+  transition: background-color .3s;
+  outline: none;
+  border: none;
+  &:hover{
+    background-color: rgba(9, 10, 7, 0.6);
+  }
+  & i{
+    font-size: 1rem;
+    @include mq(lgs){
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@mixin boton($bg-color){
+  border: none;
+  padding: .5rem 1rem;
+  letter-spacing: $espacio-entre-letras;
+  outline: none;
+  background-color: $bg-color;
+  cursor: pointer;
+  transition: background-color .3s;
+  &:hover{
+    background-color: darken($bg-color,5);
+  }
+  &:active{
+    transform: scale(.95);
+  }
+}
+
+.Btn-cta{
+  @include boton(color(cta));
+  color: color(bg);
+}
+
+.Btn-modal{
+  @include boton(color(fondo));
+  color: color(bg);
+}

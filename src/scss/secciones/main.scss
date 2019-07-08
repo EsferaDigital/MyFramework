@@ -1,3 +1,163 @@
-.Main{
-  background-color: yellow;
+.Main, .Somos .Hacemos{
+  margin: auto;
+  max-width: $ancho-maximo;
+}
+
+@mixin section-img($bg-color, $opc){
+  height: auto;
+  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  padding-bottom: 2rem;
+  &::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $bg-color;
+    opacity: $opc;
+  }
+}
+
+.Somos{
+  @include section-img(color(primary), .8);
+  background-image: img("fondo-somos.jpg");
+  & .Box-text:nth-child(1){
+    width: 100%;
+    background-color: color(secondary);
+    position: relative;
+    z-index: capa(capa1);
+  }
+  & .Box-text, .Box-btn{
+    position: relative;
+    z-index: capa(capa1);
+    & .Card-text p:nth-child(2){
+      margin-top: 1rem;
+    }
+    & .Card-text{
+      padding-top: 2rem;
+    }
+  }
+}
+
+.Hacemos{
+  @include section-img(color(primary), .8);
+  background-image: img("fondo-hacemos.jpg");
+  & .Box-text:nth-child(1){
+    width: 100%;
+    background-color: color(secondary);
+    position: relative;
+    z-index: capa(capa1);
+  }
+  & .Box-text{
+    position: relative;
+    z-index: capa(capa1);
+  }
+  & .Box-text:nth-child(2){
+    padding: 2rem 1rem;
+    @include mq(md){
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
+  }
+}
+
+.Sumate{
+  @include section-img(color(primary), .8 );
+  background-image: img("fondo-unete.jpg");
+  padding-bottom: 2rem;
+  & .Box-text:nth-child(1){
+    width: 100%;
+    background-color: color(secondary);
+    position: relative;
+    z-index: capa(capa1);
+  }
+  & .Box-text:nth-child(2){
+    margin-top: 2rem;
+    // border: 1px solid red;
+    padding: 0;
+    & .Card-text{
+      // border: 1px solid green;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1rem;
+      margin: 1rem auto;
+      padding: 0 1rem;
+    }
+  }
+  & .Box-text{
+    position: relative;
+    z-index: capa(capa1);
+  }
+  & .Box-text:nth-child(3){
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "unete"
+                         "siguenos"
+                         "apoyanos";
+    align-items: stretch; //vertical
+    justify-items: center; // horizontal
+    @include mq(lgs){
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr;
+      grid-template-areas: "unete siguenos apoyanos";
+      grid-gap: .5rem;
+    }
+    & .Card-text:nth-child(1){
+      grid-area: unete;
+      text-align: center;
+      // border: 1px solid yellow;
+      & button{
+        margin: 1rem auto;
+        background-color: color(cta);
+        &:hover{
+          background-color: darken(color(cta), 5);
+        }
+      }
+    }
+    & .Card-text:nth-child(2){
+      grid-area: siguenos;
+      text-align: center;
+      // border: 1px solid blue;
+      & a{
+        margin: 1rem;
+        color: color(tacha);
+        &:hover{
+          color: darken(color(bg), 5);
+        }
+      }
+    }
+    & .Card-text:nth-child(3){
+      grid-area: apoyanos;
+      // border: 1px solid green;
+      text-align: center;
+      & p{
+        margin-bottom: 1rem;
+      }
+      & span{
+        display: block;
+        margin-bottom: 2rem;
+      }
+      & form{
+        // border: 1px solid red;
+        & > input{
+          border: none;
+          outline: none;
+          &:active{
+            transform: scale(.95);
+            outline: none;
+          }
+        }
+        & > input:focus{
+          outline: none;
+        }
+      }
+    }
+  }
 }

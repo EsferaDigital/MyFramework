@@ -1,0 +1,23 @@
+.Card-copy{
+  display: grid;
+  max-width: 500px;
+  margin: auto;
+  grid-template-columns: var(--columns-card-copy);
+  grid-template-rows: var(--rows-card-copy);
+  font-family: $fuente-secundaria;
+  color: color(silver);
+  padding: var(--padding-box-creditos);
+  grid-gap: var(--gap-card-copy);
+  & p:first-child{
+    justify-self: center;
+    @include mq(md){
+      justify-self: end;
+    }
+  }
+  & p:last-child{
+    justify-self: center;
+    @include mq(md){
+      justify-self: start;
+    }
+  }
+}

@@ -3,29 +3,31 @@
 .Header-container{
   position: relative;
   margin: 0 auto;
-  width: 95%;
+  width: var(--main-maximo);
+  @include mq(lgs){
+    display: flex;
+  }
 }
 
 .Logo{
   position: absolute;
+  height: $altura-header;
+  line-height: $altura-header;
   z-index: capa(capa1);
+  // border: 1px solid red;
   @include mq(mdl){
     position: static;
     width: 50%;
   }
   & a{
-    font-size: 2rem;
-    text-decoration: none;
+    display: grid;
+    width: auto;
+    height: $altura-header;
+    align-content: center;
   }
   & img{
-    padding: .5rem;
-    // width: auto;
+    width: auto;
     height: $altura-header;
-    @include mq(lgs){
-      width: 15%;
-      height: calc($altura-header - 1rem);
-      margin: 0;
-    }
   }
 }
 
@@ -40,7 +42,9 @@
 }
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
-  background-color: black;
+  background-color: color(secondary);
+  // position: fixed;
+  // right: .5rem;
 }
 
 .hamburger.is-active .hamburger-inner,
@@ -59,6 +63,7 @@
   left: 0;
   right: 0;
   width: 100%;
+  height: calc(100% + 5rem);
   overflow-y: auto;
   transition: transform .5s ease;
   // De arriba
@@ -90,6 +95,10 @@
       display: none;
     }
   }
+  &-btn.is-active{
+    position: fixed;
+    right: 1rem;
+  }
 }
 
 .Menu{
@@ -115,8 +124,13 @@
   }
   & li{
     margin-left: 0;
+    line-height: 3.5rem;
+    @include mq(sm){
+      line-height: 4rem;
+    }
     @include mq(lgs){
       margin-left: .5rem;
+      line-height: 5rem;
     }
   }
   & a{
@@ -128,7 +142,6 @@
     @include mq(lgs){
       padding: 0 .5rem;
       font-size: 1rem;
-      color: black;
     }
     @include mq(lgm){
       font-size: 1.3rem;

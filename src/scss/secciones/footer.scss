@@ -1,3 +1,10 @@
 .Footer{
-  background-color: color(secondary);
+  position: relative;
+  z-index: capa(capa1);
+  width: 100%;
+  max-width: $ancho-maximo;
+  margin: auto;
+  background-color: color(shark);
 }
+
+

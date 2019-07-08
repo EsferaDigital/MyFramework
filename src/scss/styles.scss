@@ -9,11 +9,16 @@
 @import "config/breakpoints";
 @import "config/var-root";
 
+// Textos
+
+@import "textos/parrafos";
+@import "textos/otros-textos";
+@import "textos/titulos";
+
 // secciones (etiquetas html principales)
 
 @import "secciones/header";
 @import "secciones/main";
-@import "secciones/aside";
 @import "secciones/footer";
 @import "secciones/banner";
 
@@ -34,13 +39,26 @@
 @import "boxes/box-audio";
 @import "boxes/box-video";
 @import "boxes/box-form";
+@import "boxes/box-slider";
+@import "boxes/box-creditos";
+@import "boxes/box-maps";
+@import "boxes/box-btn";
 
 
 // Cards (tarjetas con contenido unico. Van siempre dentro de un container grid)
 
 @import "cards/card-img";
 @import "cards/card-text";
+@import "cards/card-copy";
+
+// Elementos
+
+@import "elementos/botones";
+@import "elementos/iconos";
+@import "elementos/modal";
 
 
 
-//Los elementos y las animaciones las importamos en los archivos en los que los necesitemos
+//Animaciones
+
+@import "animaciones/slide";

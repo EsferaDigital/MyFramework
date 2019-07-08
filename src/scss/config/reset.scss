@@ -6,10 +6,11 @@ html {
 
 body{
   margin: 0;
-  background-image: url('/img/fondo-web.jpg');
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: contain;
+  letter-spacing: 1px;
+  // background-image: url('/img/fondo-web.jpg');
+  // background-position: center center;
+  // background-attachment: fixed;
+  // background-size: contain;
 }
 
 /*Además, todo lo que haga antes y despues, añadeles un box-sizing heredaddo (inherit). Toma el valor del elemento padre. Con ello logramos que los elementos contenedores no hagan crecer la caja cuando tienen padding. También, reseteamos los margines y padding y el tamaño de letra*/

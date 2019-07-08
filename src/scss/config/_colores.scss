@@ -7,22 +7,22 @@
 // Paleta de colores
 
 $colors:(
-  primary: #0075a2,
-  secondary: #60d394,
-  success: #60d394,
-  alert: #fb3640,
-  info: #FF570C,
-  parrafos: #2c2c2c,
-  bg-parrafos: white,
-  small-text: red,
-  bg-small-text: blue,
-  link-text: green,
-  bg-link-text: yellow,
+  primary: #090A07,
+  secondary: #BE9C4A,
+  success: #E0B544,
+  cta: #E0B544,
+  alert: #C0362C,
+  silver: #C4C4C4,
+  tertiary: #484848,
+  fondo: #1F5764,
+  shark: #1C1C1A,
+  granny: #869a9c,
+  tacha: #d3c558,
   bg: #e5e5e5,
   bg-item: #ffffff,
-  cta: #ff9f1c,
-  logoA: #FF570C
 );
+
+$fondo-transparente: rgba(9, 10, 7, 0.8);
 
  // Con esta función, para capturar el color bastaria poner, por ejemplo:
  //

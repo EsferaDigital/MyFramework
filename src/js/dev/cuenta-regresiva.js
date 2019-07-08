@@ -1,4 +1,6 @@
-const cuentaRegresiva = function countDown(){
+// Para ejecutar esta función basta importarla al index.js y pasarle una fecha como parametro almacenada en assets/var-date.js
+
+const cuentaRegresiva = (finalDate) =>{
   const getRemainTime = deadline =>{
     let now = new Date(),
         remainTime = (new Date(deadline) - now + 1000) / 1000,
@@ -42,7 +44,7 @@ const cuentaRegresiva = function countDown(){
       }
     }, 1000)
   }
-  countdown('November 1 2019 12:00:00 GMT-500', 'clock');
+  countdown(finalDate, 'clock');
 }
 
-export default cuentaRegresiva
+export {cuentaRegresiva}

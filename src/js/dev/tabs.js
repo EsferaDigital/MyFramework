@@ -1,4 +1,4 @@
-const TabsNav = function navTabs(){
+const tabsNav = ()=>{
   let tabContainer = document.getElementById('TabContainer')
   let tabs = Array.prototype.slice.apply(document.querySelectorAll('.Tabs-item'))
   let panels = Array.prototype.slice.apply(document.querySelectorAll('.Tabs-panels-item')) // Ojo que tabs y panels son un non list no un array, por eso los transformamos en un array
@@ -21,4 +21,4 @@ const TabsNav = function navTabs(){
   })
 }
 
-export default TabsNav
+export {tabsNav}

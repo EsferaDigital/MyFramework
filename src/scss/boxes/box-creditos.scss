@@ -1,0 +1,13 @@
+.Box-creditos{
+  background-color: black;
+  display: grid;
+  padding: var(--padding-box-creditos);
+  justify-items: center;
+  align-items: center;
+  font-family: $fuente-secundaria;
+  color: color(bg);
+  font-weight: 400;
+  & p{
+    letter-spacing: 0;
+  }
+}

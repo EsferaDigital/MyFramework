@@ -1,3 +1,5 @@
 .Main-container{
   border: 3px solid green;
+  max-width: $ancho-maximo;
+  margin: $altura-header auto 0;
 }

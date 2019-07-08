@@ -4,7 +4,7 @@
 	@keyframes slideleft {
 		from{
 			transform: translate3d(-100%,0,0);
-		}		
+		}
 	}
 }
 
@@ -14,7 +14,7 @@
 	@keyframes slideright {
 		from{
 			transform: translate3d(100%,0,0);
-		}		
+		}
 	}
 }
 
@@ -24,7 +24,7 @@
 	@keyframes slidetop {
 		from{
 			transform: translate3d(0,-100%,0);
-		}		
+		}
 	}
 }
 
@@ -34,7 +34,7 @@
 	@keyframes slidebottom {
 		from{
 			transform: translate3d(0,100%,0);
-		}		
+		}
 	}
 }
 
@@ -46,7 +46,7 @@
 	@keyframes slideDown {
 		to{
 			max-height: $height;
-		}		
+		}
 	}
 }
 
@@ -58,7 +58,7 @@
 	@keyframes slideUp {
 		to{
 			max-height: 0;
-		}		
+		}
 	}
 }
 

@@ -1,19 +1,20 @@
 // Pasar a mixin
 
-@mixin text($size, $color, $bg-color){
+@mixin text($size){
   font-size: $size;
-  color: $color;
-  background-color: $bg-color;
+  // color: $color;
+  // background-color: $bg-color;
 }
 
 .Small-text{
-  @include text(var(--font-size-small-text), color(small-text), color(bg-small-text) );
+  @include text(var(--font-size-small-text));
 }
 
-.Link-text{
-  @include text(var(--font-size-link-text), color(link-text), color(bg-link-text));
+.Text-link{
+  @include text(var(--font-size-small-text));
   transition: color .3s ease;
+  color: color(secondary);
   &:hover{
-    color: color(hover-link-text);
+    color: darken(color(secondary), 5);
   }
 }

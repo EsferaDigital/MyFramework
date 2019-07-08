@@ -1,4 +1,4 @@
-const Masonry = function galeria(){
+const Masonry = () =>{
   const masonryLayout = (containerElem, itemsElemens, columns) => {
     containerElem.classList.add('Masonry-layout',`columns-${columns}`)
     let columnsElements = []
@@ -20,4 +20,6 @@ const Masonry = function galeria(){
   masonryLayout(document.getElementById('Gallery'), document.querySelectorAll('.Masonry-layout-item'), 4)
 }
 
-export default Masonry
+export {
+  Masonry
+}

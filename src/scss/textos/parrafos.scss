@@ -1,13 +1,11 @@
-@mixin parrafos($familia, $size, $color, $bg-color){
-  font-family: $familia;
-  font-size: $size;
-  color: $color;
-  background-color: $bg-color;
+@mixin parrafo{
+  font-family: $fuente-secundaria;
+  font-size: var(--font-size-parrafos);
 }
 
 
 
 .Parrafo{
-  @include parrafos($fuente-secundaria, var(--font-size-parrafos), color(parrafos), color(bg-parrafos));
-
+  @include parrafo;
+  color: color(bg);
 }

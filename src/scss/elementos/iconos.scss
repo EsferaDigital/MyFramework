@@ -1,6 +1,6 @@
 
-@mixin icon($size, $color, $bg-color){
-  font-size: $size;
+@mixin icon($color, $bg-color){
+  font-size: var(--size-icon);
   color: $color;
   background-color: $bg-color;
   &:hover{
@@ -9,7 +9,7 @@
 }
 
 .Icon-link{
-  @include icon(var(--size-icon), color(secondary), transparent);
+  @include icon(color(bg), transparent);
   padding: var(--padding-icon);
   transition: color .3s ease;
 }
