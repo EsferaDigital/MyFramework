@@ -1,6 +1,6 @@
 'use strict'
 
-import {watch, series, parallel, src, task, dest} from 'gulp';
+import {watch, series, parallel, src, dest} from 'gulp';
 import bust from 'gulp-cache-bust';
 import plumber from 'gulp-plumber';
 import pug from 'gulp-pug';
@@ -18,8 +18,7 @@ import imagemin from 'gulp-imagemin';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 
-const reload = browserSync.reload
-const server = browserSync.create();
+const servidor = browserSync.create();
 const imageminOptions = {
   progressive: true,
   optimizationLevel: 3,
@@ -27,36 +26,38 @@ const imageminOptions = {
   svgPlugins: [{removeViewBox: false}]
 }
 
-let onError = err =>{
+function onError(err){
   console.log('Se ha producido un error: ', err.message);
   this.emit('end');
 }
 
 // 1°Toma cualquier archivo pug, lo pasa a html, lo minifica y crea un archivo html en la raíz si este no existe.
 
-function html(done){
+function html(cb){
   src('./src/pug/paginas/*.pug')
     .pipe(pug({
       pretty: true
     }))
     .pipe(gulpPugBeautify({ omit_empty: true }))
     .pipe(htmlmin({ collapseWhitespace: true })) //Activar para minificar
-    .pipe(dest('./public/'));
-  done()
+    .pipe(dest('./public/'))
+    .pipe(servidor.stream())
+  cb()
 }
 
 // 2° Añade una firma temporal al css y al js para que el navegador los reconozca como archivos nuevos cuando hagamos cambios
-function cache(done){
+function cache(cb){
   src('./public/**/*.html')
     .pipe(bust({
         type: 'timestamp'
     }))
     .pipe(dest('./public'));
-  done()
-};
+  cb()
+}
 
-//3° Toma los archivos scss, les pone prefijos, les borra los comentarios, crea el sourcemaps, avisa errores, los pasa a css, minifica el css y lo envia a la carpeta public
-function sass(done){
+// 3° Toma los archivos scss, les pone prefijos, les borra los comentarios, crea el sourcemaps, avisa errores, los pasa a css, minifica el css y lo envia a la carpeta public
+
+function sass(cb){
   src('./src/scss/styles.scss')
     .pipe(plumber({ errorHandler: onError }))
     // Iniciamos el trabajo con sourcemaps
@@ -68,21 +69,20 @@ function sass(done){
     // Escribir los sourcemaps
     .pipe(sourcemaps.write('.'))
     .pipe(dest('./public/css'))
-    .pipe(server.stream())
-  done()
-};
+    .pipe(servidor.stream())
+  cb()
+}
 
 // 4° Vigila los posibles errores en js
 
-function lint(done){
+function lint(){
   src('./src/js/**/*.js')
     .pipe(jshint())
-  done()
-};
+}
 
 // 5° Toma el archivo index.js, lo pasa por babel, avisa posibles errores, crea un archivo js, lo minifica, lo envía a la carpeta public y crea un archivo maps para ese archivo. Es importante crear un archivo para cada página, para ello, basta editar el index.js y cambiar el nombre del archivo resultante en esta tarea
 
-function js(done){
+function js(cb){
   browserify('./src/js/index.js')
     .transform('babelify', {presets: ["@babel/preset-env"]})
     .bundle()
@@ -93,47 +93,37 @@ function js(done){
     .pipe(sourcemaps.write('./'))
     .pipe(jsmin())
     .pipe(dest('./'))
-    .pipe(reload({stream: true}))
-  done()
-};
+    .pipe(servidor.stream())
+  cb()
+}
 
 // 6° Toma todas la imagenes, las optimiza y las envía a la carpeta public
 
-function img(done){
+function img(cb){
   src('./src/img/*.*')
     .pipe(plumber({ errorHandler: onError }))
     .pipe(imagemin(imageminOptions))
     .pipe(dest('./public/img'));
-  done()
-};
+  cb()
+}
 
-// 7°Inicia el servidor en la carpeta public, observa y actualiza automaticamente los cambios realizados en los archivos; styles.scss, *.pug, *.js y *.html. Además mantiene las tareas programadas actualizandolas automaticamente.
-function servidor(done){
-  server.init({
+// 7° Levanta un servidor y abre una pestaña con el proyecto, vigila los cambios e inyecta los cambios en los archivos correspondientes
+function watchFiles(){
+  servidor.init({
     server: {
       baseDir: "./public"
     }
-  });
-  done()
+  })
+  watch('./src/pug/*/*.pug', html)
+  watch('./src/scss/*/*.scss', series(sass, cache))
+  watch('./src/js/index.js', series(js, cache))
 }
 
-function watch_files(){
-  watch('./src/pug/*/*.pug', series(html, reload))
-  watch('./src/scss/*/*.scss', series(sass, cache, reload))
-  watch('./src/js/*/*.js', series(js, cache, reload))
-  watch('./src/img/*.*', series(img, reload))
-}
 
-// Guardamos en el objeto gulp task nuestras funciones
-task("html", html)
-task("cache", cache)
-task("sass", sass)
-task("lint", lint)
-task("js", js)
-task("img", img)
-task("servidor", servidor)
-task("watch_files", series(watch_files, servidor))
-
-// 8° Pone en ejecución toda la programación al comando gulp por consola
-
-task('default', parallel(html, cache, sass,lint, js, servidor, watch_files))
+exports.html = html
+exports.cache = cache
+exports.sass = sass
+exports.js = js
+exports.img = img
+exports.watchFiles = watchFiles
+exports.default = series(parallel(html, sass, js), watchFiles)
