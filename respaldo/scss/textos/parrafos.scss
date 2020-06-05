@@ -1,0 +1,11 @@
+@mixin parrafo{
+  font-family: $fuente-secundaria;
+  font-size: var(--font-size-parrafos);
+}
+
+
+
+.Parrafo{
+  @include parrafo;
+  color: color(bg);
+}

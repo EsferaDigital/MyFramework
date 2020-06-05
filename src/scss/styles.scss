@@ -1,64 +1,40 @@
+
 // Configuración
 
 @import "config/reset";
 @import "config/capas";
 @import "config/colores";
-@import "config/fuentes";
-@import "config/sombras";
-@import "config/imagenes";
 @import "config/breakpoints";
 @import "config/var-root";
 
-// Textos
-
-@import "textos/parrafos";
-@import "textos/otros-textos";
-@import "textos/titulos";
-
-// secciones (etiquetas html principales)
+// Secciones
 
 @import "secciones/header";
+@import "secciones/container";
 @import "secciones/main";
 @import "secciones/footer";
-@import "secciones/banner";
 
-// contenedores (contenedores principales)
+// Layout
 
-@import "contenedores/header-container";
-@import "contenedores/main-container";
-@import "contenedores/aside-container";
-@import "contenedores/footer-container";
-@import "contenedores/container-central";
-@import "contenedores/container-grid"; //para meter dentro maś de una card y/o elemento
+@import "layout/columnas";
+@import "layout/filas";
+@import "layout/margenes";
+@import "layout/padding";
 
+// Textos
 
-// Boxes (contenido único centrado absoluto)
-
-@import "boxes/box-img";
-@import "boxes/box-text";
-@import "boxes/box-audio";
-@import "boxes/box-video";
-@import "boxes/box-form";
-@import "boxes/box-slider";
-@import "boxes/box-creditos";
-@import "boxes/box-maps";
-@import "boxes/box-btn";
-
-
-// Cards (tarjetas con contenido unico. Van siempre dentro de un container grid)
-
-@import "cards/card-img";
-@import "cards/card-text";
-@import "cards/card-copy";
+@import "textos/fuentes";
+@import "textos/titulos";
+@import "textos/subtitulos";
+@import "textos/parrafos";
+@import "textos/menu";
 
 // Elementos
 
-@import "elementos/botones";
-@import "elementos/iconos";
-@import "elementos/modal";
+// Wordpress (si se necesita)
 
+// Elementor (si se necesita)
 
+// Woocommerce (si se necesita)
 
-//Animaciones
-
-@import "animaciones/slide";
+// Animaciones

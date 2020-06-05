@@ -1,12 +1,5 @@
+// Para los estilos de la etiqueta header y todo lo que contenga dicha etiqueta, puedo crear distintos tipos de header con distinta distribución de los elementos clasico (menu, logo, iconos a redes sociales)
+
 .Header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: capa(capa10);
-  width: 100%;
-  max-width: $ancho-maximo;
-  height: $altura-header;
-  line-height: $altura-header;
+  border: 2px solid blue;
 }

@@ -1,0 +1,47 @@
+// Variables
+
+
+@mixin titulo{
+  padding: var(--padding-titulo);
+  letter-spacing: $espacio-entre-letras;
+  font-weight: 400;
+  padding: 1rem 0;
+}
+
+@mixin sub-titulo{
+  font-size: var(--font-size-subtitulo);
+  letter-spacing: $espacio-entre-letras;
+  font-weight: 400;
+  padding: 1rem 0;
+}
+
+// Para los h1
+.Titulo{
+  @include titulo;
+  font-size: var(--font-size-titulo);
+}
+
+.Titulo-2{ // Para los h2
+  @include titulo;
+  font-size: var(--font-size-titulo-2);
+  color: color(bg);
+  padding: 0;
+}
+
+.Titulo-3{ // Para los h3
+  @include titulo;
+  font-size: var(--font-size-titulo-3);
+  color: color(success);
+}
+
+.Sub-titulo{
+  @include sub-titulo;
+  color: color(bg);
+  font-size: var(--font-size-sub-titulo);
+}
+
+.Slogan{
+  @include sub-titulo;
+  color: color(secondary);
+  font-size: var(--font-size-slogan);
+}

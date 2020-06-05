@@ -1,7 +1,6 @@
+ //Para obtener color
 
-// Para guardar la paleta de colores y los colores degradados que usaremos en cada proyecto. Se modifica en función de cada proyecto
-
-@function color($color) {
+ @function color($color) {
   @return map-get($colors,$color);
 }
 

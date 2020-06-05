@@ -1,10 +1,6 @@
+
+// Para los estilos de la etiqueta footer y todo lo que contenga dicha etiqueta, puedo crear distintos tipos de footer con distinta distribución de los elementos clasico (copyrigth, link al autor, redes sociales, contacto, menu, etc)
+
 .Footer{
-  position: relative;
-  z-index: capa(capa1);
-  width: 100%;
-  max-width: $ancho-maximo;
-  margin: auto;
-  background-color: color(shark);
+  border: 2px solid brown;
 }
-
-

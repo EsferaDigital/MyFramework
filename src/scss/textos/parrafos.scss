@@ -1,11 +1,2 @@
-@mixin parrafo{
-  font-family: $fuente-secundaria;
-  font-size: var(--font-size-parrafos);
-}
 
-
-
-.Parrafo{
-  @include parrafo;
-  color: color(bg);
-}
+// Para manejar los estilos de los parrafos. Podemos crear variaciones de los parrafos segun si son para un card o para un artículo, por ejemplo
