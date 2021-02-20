@@ -1,27 +1,28 @@
 
-// Configuración
+/* Configuracion */
 
 @import "config/reset";
 @import "config/capas";
 @import "config/colores";
 @import "config/breakpoints";
 @import "config/var-root";
+@import "config/ejemplos";
 
-// Secciones
+/* Secciones */
 
 @import "secciones/header";
 @import "secciones/container";
 @import "secciones/main";
 @import "secciones/footer";
 
-// Layout
+/* Layout */
 
 @import "layout/columnas";
 @import "layout/filas";
 @import "layout/margenes";
 @import "layout/padding";
 
-// Textos
+/* Textos */
 
 @import "textos/fuentes";
 @import "textos/titulos";
@@ -29,12 +30,8 @@
 @import "textos/parrafos";
 @import "textos/menu";
 
-// Elementos
+/* Elementos */
 
-// Wordpress (si se necesita)
+/* Wordpress (si se necesita) */
 
-// Elementor (si se necesita)
-
-// Woocommerce (si se necesita)
-
-// Animaciones
+/* Animaciones */

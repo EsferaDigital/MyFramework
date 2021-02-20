@@ -1,9 +1,0 @@
-@import "box-mixin";
-
-.Box-text{
-  @include Box;
-  padding: 1rem;
-  margin: auto;
-  width: var(--main-maximo);
-  max-width: $ancho-maximo;
-}
