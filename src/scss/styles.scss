@@ -2,29 +2,31 @@
 /* Configuracion */
 
 @import "config/reset";
+@import "textos/fuentes";
 @import "config/capas";
 @import "config/colores";
 @import "config/breakpoints";
 @import "config/var-root";
-@import "config/ejemplos";
+// @import "config/ejemplos";
 
 /* Secciones */
 
 @import "secciones/header";
-@import "secciones/container";
 @import "secciones/main";
 @import "secciones/footer";
 
 /* Layout */
 
+@import "layout/contenedores";
 @import "layout/columnas";
 @import "layout/filas";
+@import "layout/gap";
+@import "layout/grid";
 @import "layout/margenes";
 @import "layout/padding";
 
 /* Textos */
 
-@import "textos/fuentes";
 @import "textos/titulos";
 @import "textos/subtitulos";
 @import "textos/parrafos";

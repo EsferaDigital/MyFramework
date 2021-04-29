@@ -2,22 +2,36 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ada con Webpack</title>
+  <title>Ada</title>
 </head>
 <body>
-  <header class="Header">
-    <h1>Header prueba</h1>
-    {{> ../elementos/menu}}
-  </header>
-  <section class="Container-central">
-    <main class="Main">
-      <h1>Main</h1>
-      <div id="app"></div>
+  <div class="banner">
+    <h1>Encabezado H1</h1>
+    <h2>Encabezado H2</h2>
+    <h3>Encabezado H3</h3>
+    <h4>Encabezado H4</h4>
+    <h5>Encabezado H5</h5>
+    <h6>Encabezado H6</h6>
+  </div>
+
+  <div class="contenedor">
+    <h1 class="display-1">Display 1</h1>
+    <h2 class="display-2">Display 2</h2>
+    <h3 class="display-3">Display 3</h3>
+  </div>
+
+  <div class="contenedor">
+    <main class="grid col-2 col-4-smm col-6-mdl gap-15">
+      <div class="card pad-15">Card 1</div>
+      <div class="card pad-15">Card 2</div>
+      <div class="card pad-15">Card 3</div>
+      <div class="card pad-15">Card 4</div>
+      <div class="card pad-15">Card 5</div>
+      <div class="card pad-15">Card 6</div>
     </main>
-  </section>
-  <footer class="Footer">
-    <h1>Footer</h1>
-  </footer>
+  </div>
+
 </body>
 </html>

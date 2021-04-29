@@ -2,6 +2,24 @@
 
 // Variables para maquetación
 
-$ancho-maximo: 1400px; //de todo el sitio
+$ancho-maximo: 1600px; // para la clase contenedor
+$ancho-total: 1920px;
+$sombra: 0px 0px 30px color(sombra);
+$borde-card: 3px;
 
-// Sombras
+// Estilos generales
+
+body{
+  background: color(fondo);
+  font-family: $fuente-parrafos;
+  font-size: 18px;
+}
+
+p{
+  line-height: 27px;
+}
+
+img{
+  vertical-align: top;
+  width: 100%;
+}

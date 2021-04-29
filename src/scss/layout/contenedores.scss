@@ -1,0 +1,28 @@
+
+// Para secciones
+.contenedor{
+  max-width: 90%;
+  width: $ancho-maximo;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.card{
+  padding: 5px;
+  background: color(fondo-card);
+  border-radius: $borde-card;
+  box-shadow: $sombra;
+}
+
+.banner{
+  width: 100%;
+  max-width: $ancho-total;
+  margin: 0 auto;
+}
+
+.grid{
+  display: grid;
+  width: 100%;
+}
+
+

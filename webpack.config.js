@@ -74,6 +74,7 @@ const fontRule = {
     name: './assets/fonts/[name].[ext]'
   }
 }
+
 // Plugins
 
 const HbsToHtml = new HtmlWebpackPlugin({

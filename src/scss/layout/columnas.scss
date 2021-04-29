@@ -1,4 +1,96 @@
 
-// Para las clases que añaden distintos tipos de columnas que puede tener un elemento
+// Para las clases que añaden distintos tipos de columnas que puede tener un elemento con la clase grid
 
-// Crearlos con mixin 
+// Crearlos con mixin
+
+@mixin col($col, $fr: 1fr){
+  grid-template-columns: repeat($col, $fr);
+}
+
+.col-1 {@include col(1, 1fr);}
+.col-2 {@include col(2, 1fr);}
+.col-3 {@include col(3, 1fr);}
+.col-4 {@include col(4, 1fr);}
+.col-5 {@include col(5, 1fr);}
+.col-6 {@include col(6, 1fr);}
+.col-7 {@include col(7, 1fr);}
+.col-8 {@include col(8, 1fr);}
+.col-9 {@include col(9, 1fr);}
+.col-10 {@include col(10, 1fr);}
+.col-11 {@include col(11, 1fr);}
+.col-12 {@include col(12, 1fr);}
+
+@media screen and (min-width: $small-medium){
+  .col-1-smm {@include col(1, 1fr);}
+  .col-2-smm {@include col(2, 1fr);}
+  .col-3-smm {@include col(3, 1fr);}
+  .col-4-smm {@include col(4, 1fr);}
+  .col-5-smm {@include col(5, 1fr);}
+  .col-6-smm {@include col(6, 1fr);}
+  .col-7-smm {@include col(7, 1fr);}
+  .col-8-smm {@include col(8, 1fr);}
+  .col-9-smm {@include col(9, 1fr);}
+  .col-10-smm {@include col(10, 1fr);}
+  .col-11-smm {@include col(11, 1fr);}
+  .col-12-smm {@include col(12, 1fr);}
+}
+
+@media screen and (min-width: $medium-large){
+  .col-1-mdl {@include col(1, 1fr);}
+  .col-2-mdl {@include col(2, 1fr);}
+  .col-3-mdl {@include col(3, 1fr);}
+  .col-4-mdl {@include col(4, 1fr);}
+  .col-5-mdl {@include col(5, 1fr);}
+  .col-6-mdl {@include col(6, 1fr);}
+  .col-7-mdl {@include col(7, 1fr);}
+  .col-8-mdl {@include col(8, 1fr);}
+  .col-9-mdl {@include col(9, 1fr);}
+  .col-10-mdl {@include col(10, 1fr);}
+  .col-11-mdl {@include col(11, 1fr);}
+  .col-12-mdl {@include col(12, 1fr);}
+}
+
+@media screen and (min-width: $large-small){
+  .col-1-lgs {@include col(1, 1fr);}
+  .col-2-lgs {@include col(2, 1fr);}
+  .col-3-lgs {@include col(3, 1fr);}
+  .col-4-lgs {@include col(4, 1fr);}
+  .col-5-lgs {@include col(5, 1fr);}
+  .col-6-lgs {@include col(6, 1fr);}
+  .col-7-lgs {@include col(7, 1fr);}
+  .col-8-lgs {@include col(8, 1fr);}
+  .col-9-lgs {@include col(9, 1fr);}
+  .col-10-lgs {@include col(10, 1fr);}
+  .col-11-lgs {@include col(11, 1fr);}
+  .col-12-lgs {@include col(12, 1fr);}
+}
+
+@media screen and (min-width: $large-medium){
+  .col-1-lgm {@include col(1, 1fr);}
+  .col-2-lgm {@include col(2, 1fr);}
+  .col-3-lgm {@include col(3, 1fr);}
+  .col-4-lgm {@include col(4, 1fr);}
+  .col-5-lgm {@include col(5, 1fr);}
+  .col-6-lgm {@include col(6, 1fr);}
+  .col-7-lgm {@include col(7, 1fr);}
+  .col-8-lgm {@include col(8, 1fr);}
+  .col-9-lgm {@include col(9, 1fr);}
+  .col-10-lgm {@include col(10, 1fr);}
+  .col-11-lgm {@include col(11, 1fr);}
+  .col-12-lgm {@include col(12, 1fr);}
+}
+
+@media screen and (min-width: $large){
+  .col-1-lg {@include col(1, 1fr);}
+  .col-2-lg {@include col(2, 1fr);}
+  .col-3-lg {@include col(3, 1fr);}
+  .col-4-lg {@include col(4, 1fr);}
+  .col-5-lg {@include col(5, 1fr);}
+  .col-6-lg {@include col(6, 1fr);}
+  .col-7-lg {@include col(7, 1fr);}
+  .col-8-lg {@include col(8, 1fr);}
+  .col-9-lg {@include col(9, 1fr);}
+  .col-10-lg {@include col(10, 1fr);}
+  .col-11-lg {@include col(11, 1fr);}
+  .col-12-lg {@include col(12, 1fr);}
+}
