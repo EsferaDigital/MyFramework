@@ -1,0 +1,31 @@
+
+@mixin btn($bg-color, $text-color, $hover-color){
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 22px;
+  background-color: $bg-color;
+  border: none;
+  cursor: pointer;
+  color: $text-color;
+  transition: .25s ease all;
+  &:hover{
+    background-color: $hover-color;
+  }
+  &:active{
+    transform: scale(0.98);
+  }
+}
+
+.btn{
+  @include btn(purple, #fff, rgb(224, 21, 224));
+}
+
+.btn-cta{
+  @include btn(purple, #fff, rgb(224, 21, 224));
+}
+
+.btn-env{
+  @include btn(purple, #fff, rgb(224, 21, 224));
+}

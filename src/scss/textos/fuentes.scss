@@ -5,3 +5,8 @@
 
 $fuente-parrafos: 'Open Sans', sans-serif;
 $fuente-titulos:'Comfortaa', cursive;
+
+// Fuente para los formularios
+form *{
+  font-family: $fuente-parrafos;
+}

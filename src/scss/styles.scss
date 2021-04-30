@@ -20,10 +20,11 @@
 @import "layout/contenedores";
 @import "layout/columnas";
 @import "layout/filas";
-@import "layout/gap";
 @import "layout/grid";
-@import "layout/margenes";
-@import "layout/padding";
+@import "layout/helpers";
+// @import "layout/width";
+// @import "layout/margenes";
+// @import "layout/padding";
 
 /* Textos */
 
@@ -33,6 +34,10 @@
 @import "textos/menu";
 
 /* Elementos */
+
+@import "elementos/panel";
+@import "elementos/formularios";
+@import "elementos/botones";
 
 /* Wordpress (si se necesita) */
 

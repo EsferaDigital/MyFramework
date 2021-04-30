@@ -7,7 +7,19 @@
   <title>Ada</title>
 </head>
 <body>
-  <div class="banner">
+  <header class="Header">
+    <div class="contenedor">
+      <div class="Panel">
+        <nav class="nav">
+          <a href="#" class="activo">Inicio</a>
+          <a href="#">Blog</a>
+          <a href="#">Acerca de</a>
+          <a href="#">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="contenedor">
     <h1>Encabezado H1</h1>
     <h2>Encabezado H2</h2>
     <h3>Encabezado H3</h3>
@@ -31,6 +43,42 @@
       <div class="card pad-15">Card 5</div>
       <div class="card pad-15">Card 6</div>
     </main>
+  </div>
+
+  <div class="contenedor card mg-top-20 text-center pad-20">
+    <h1 class="display-2">Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam asperiores impedit cum quasi beatae eaque pariatur officia, eius eum eos rem id cupiditate, nihil commodi, laborum provident molestiae hic sapiente.</p>
+    <button class="btn">Boton</button>
+    <button class="btn">Boton</button>
+  </div>
+
+  <div class="contenedor mg-top-20">
+    <div class="card w-50 pad-15">
+      <h3 class="titulo-card">
+        Registrate
+      </h3>
+      <form action=""
+            class="form">
+        <div class="form-item">
+          <input type="text"
+                 class="input"
+                 name="correo"
+                 id="Correo"
+                 placeholder="Correo Electrónico">
+        </div>
+        <div class="form-item">
+          <input type="password"
+                 class="input"
+                 name="password"
+                 id="Password"
+                 placeholder="Contraseña">
+        </div>
+        <div class="form-item">
+          <button class="btn">Suscríbete</button>
+          <button class="btn">Regístrate</button>
+        </div>
+      </form>
+    </div>
   </div>
 
 </body>

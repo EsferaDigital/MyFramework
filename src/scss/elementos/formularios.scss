@@ -1,0 +1,18 @@
+
+.form{
+  &-item{
+    border: 2ox solid blue;
+    & .input{
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      border-radius: 3px;
+      border: 1px solid #22f5e3;
+      transition: .25s ease all;
+      &:focus{
+        border: 1px solid #641ee7;
+        outline: none;
+      }
+    }
+  }
+}
